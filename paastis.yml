@@ -1,10 +1,6 @@
 
 rules:
-  - pattern: 'cdb-app-review-pr(\d+)'
+  - pattern: 'cdb-(app|backend|hasura)-review-pr(\d+)'
+    app_name: 'cdb-$1-review-pr$2'
     linked_apps:
-      - 'cdb-backend-review-pr$1'
-      - 'cdb-hasura-review-pr$1'
-
-  - pattern: 'cdb-backend-review-pr(\d+)'
-    linked_apps:
-      - 'cdb-hasura-review-pr$1'
+      - 'cdb-$1-review-pr$2'
