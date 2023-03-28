@@ -1,10 +1,7 @@
 
 rules:
-  - pattern: 'cdb-(app|backend|hasura)-pr(\d+)'
-    group_name: 'cdb-$1-review-pr$2'
-    provider_name: 'scalingo'
-    provider_zone: 'osc-fr1'
-    app_name: 'cdb-$1-review-pr$2'
-    app_group: 'cdb-review-pr$2'
+  - pattern: 'cdb-(app|backend|hasura)-review-pr(\d+)'
+    linked_apps:
+      - 'cdb-$1-review-pr$2'
     app_max_idle_time: 1
 
