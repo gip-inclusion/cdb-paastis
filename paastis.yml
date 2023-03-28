@@ -1,6 +1,12 @@
 
 rules:
-  - pattern: 'cdb-(app|backend|hasura)-review-pr(\d+)'
-    app_name: 'cdb-$1-review-pr$2'
+  - pattern: 'cdb-app-review-pr(\d+)'
     linked_apps:
-      - 'cdb-$1-review-pr$2'
+      - 'cdb-backend-review-pr$1'
+      - 'cdb-hasura-review-pr$1'
+    app_max_idle_time: 5
+
+  - pattern: 'cdb-backend-review-pr(\d+)'
+    linked_apps:
+      - 'cdb-hasura-review-pr$1'
+    app_max_idle_time: 5
