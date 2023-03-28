@@ -12,7 +12,7 @@ node_modules
 .idea
 .clever.json
 coverage
-paastis.yml
+#paastis.yml
 .history
 .vscode
 /dist
